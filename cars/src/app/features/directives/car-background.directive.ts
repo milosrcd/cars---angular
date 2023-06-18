@@ -14,9 +14,9 @@ export class CarBackgroundDirective implements OnInit {
 
   private setElementBackground() {
     if (this.price < 5000) {
-      this.elementRef.nativeElement.style.backgroundColor = '#E2FCE6';
+      this.elementRef.nativeElement.style.backgroundColor = '#cfffca';
     } else if (this.price >= 5000 && this.price <= 15000) {
-      this.elementRef.nativeElement.style.backgroundColor = '#DFF2FD';
+      this.elementRef.nativeElement.style.backgroundColor = '#dcffff';
     } else {
       this.elementRef.nativeElement.style.backgroundColor = 'white';
     }
