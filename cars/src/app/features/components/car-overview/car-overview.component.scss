@@ -1,0 +1,46 @@
+.caroverview {
+  display: flex;
+  border: transparent;
+  background-color: white;
+  border-radius: 4px;
+  width: 100%;
+  justify-content: space-evenly;
+  border-radius: 4px;
+}
+
+.image-container {
+  width: 60%;
+  float: left;
+  padding: 10px 10px 10px 10px;
+}
+
+.image-container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.content-container {
+  margin-top: 40px;
+  width: 60%;
+  padding: 10px;
+}
+
+p {
+  font-weight: bold;
+}
+
+.closebtn {
+  position: absolute;
+  right: 20px;
+  margin-top: -40px;
+  margin-right: 10px;
+  font-size: 24px;
+  align-items: flex-end;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+

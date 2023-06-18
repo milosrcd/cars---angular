@@ -1,0 +1,17 @@
+@import "../../../../styles/variables";
+.footer {
+  padding: 24px 0px;
+
+  &.footer-default {
+    background-color: #f2f2f2;
+  }
+
+  .copyright {
+    font-size:  0.8571em;
+    line-height: 1.8;
+    padding-right: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}

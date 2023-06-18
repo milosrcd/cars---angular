@@ -1,0 +1,47 @@
+@mixin transition($time) {
+  transition: all $time;
+}
+
+@mixin sidebar-color($color) {
+  &:after {
+    background: $color;
+  }
+}
+
+@mixin sidebar-active-color($font-color) {
+  .nav {
+    li {
+      &.active > a,
+      &.active > {
+        color: $font-color;
+
+      }
+    }
+  }
+}
+
+@mixin transform-translate-x($value) {
+  transform: translate3d($value, 0, 0);
+}
+
+@mixin sidebar-text-color($text-color) {
+  .nav {
+    li {
+      &:hover:not(.active) > a,
+      &:focus:not(.active) > a {
+        opacity: 1;
+      }
+    }
+  }
+
+  .logo {
+    .simple-text {
+      color: $text-color;
+      font-weight: 600;
+      font-size: 22px;
+    }
+    &:after {
+      background-color: $text-color;
+    }
+  }
+}

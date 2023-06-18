@@ -1,0 +1,74 @@
+<ng-container class="modal">
+  <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Car Name</mat-label>
+      <input matInput #inputName maxlength="45" formControlName="car" />
+      <mat-hint align="end">{{ inputName.value.length }}/45</mat-hint>
+    </mat-form-field>
+    <ng-container>
+      <input
+        class="inputFile"
+        type="file"
+        id="uploadedImg"
+        accept="image/*"
+        formControlName="uploadedImg"
+        (change)="onFileSelected($event)"
+      />
+    </ng-container>
+    <mat-form-field appearance="outline">
+      <mat-label>Model</mat-label>
+      <input
+        matInput
+        #inputModel
+        maxlength="20"
+        placeholder="max 20 characters"
+        formControlName="model"
+      />
+      <mat-hint align="end">{{ inputModel.value.length }}/20</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Video</mat-label>
+      <input matInput #input formControlName="video" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        #textarea
+        maxlength="250"
+        placeholder="max is 250 characters"
+        formControlName="description"
+      ></textarea>
+      <mat-hint align="end">{{ textarea.value.length }}/250</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Engine</mat-label>
+      <input
+        matInput
+        #inputEngine
+        maxlength="45"
+        placeholder="max 45 characters"
+        formControlName="engine"
+      />
+      <mat-hint align="end">{{ inputEngine.value.length }}/45</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <input
+        matInput
+        #inputPoints
+        type="number"
+        placeholder="price in euros"
+        formControlName="price"
+      />
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button [disabled]="carForm.invalid" type="submit" mat-raised-button>
+        {{ data ? "Update" : "Create" }}
+      </button>
+    </div>
+  </form>
+</ng-container>

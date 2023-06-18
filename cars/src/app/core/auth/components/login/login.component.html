@@ -1,0 +1,49 @@
+<div class="login">
+  <mat-card class="example-form">
+    <div>
+      <img src="../../../../../assets/img/car-silhouette-logo.png" />
+      <br />
+      <a
+        >“It’s what non-car people don’t get. They see all cars as just a ton
+        and a half, two tons of wires, glass, metal, and rubber, and that’s all
+        they see. People like you or I know we have an unshakable belief that
+        cars are living entities… You can develop a relationship with a car and
+        that’s what non-car people don’t get… When something has foibles and
+        won’t handle properly, that gives it a particularly human quality
+        because it makes mistakes, and that’s how you can build a relationship
+        with a car that other people won’t get.”
+        <br />
+        <strong>Jeremy Clarkson</strong></a
+      >
+    </div>
+    <form class="example-form" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="Ex. pera@peric.com"
+            name="email"
+            [(ngModel)]="form.email"
+          />
+        </mat-form-field>
+      </p>
+      <br />
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            name="password"
+            [(ngModel)]="form.password"
+          />
+        </mat-form-field>
+      </p>
+      <br />
+      <button mat-raised-button type="submit">Login</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,31 @@
+@import "../../../../../styles/variables";
+
+.mat-form-field {
+  display: block;
+  justify-content: center;
+}
+
+::ng-deep .mat-dialog-container {
+  background-color: $default-body-bg;
+  color: $default-color;
+  display: flex;
+  justify-content: center;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: $white-color;
+  border-radius: 6px;
+}
+
+input {
+  font-size: 14px;
+}
+
+mat-label {
+  font-size: 12px;
+}
+
+.inputFile{
+  width: fit-content;
+  height: 30px;
+}

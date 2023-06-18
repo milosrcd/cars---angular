@@ -1,0 +1,26 @@
+<mat-card class="example-card" appCarBackground [price]="car.price">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title [routerLink]="['/cars', car.id]" class="cursor">
+      {{ car.name }}
+    </mat-card-title>
+    <mat-card-subtitle>{{ car.model }}</mat-card-subtitle>
+    <hr />
+    <mat-card-content>
+      {{ car.price | currency : "EUR" : "symbol" : "1.0-0" }}
+      <br />
+      {{ car.createdAt | date : "dd.MM.YYYY" }}
+    </mat-card-content>
+  </mat-card-header>
+  <div class="image-container">
+    <img mat-card-image src="{{ car.image }}" alt="{{ car.name }}" />
+  </div>
+  <mat-card-content>
+    <p>{{ car.description | descriptionLimit : 70 }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="openVideo(car.videoUrl)">
+      <span><mat-icon>video_library</mat-icon>If you wanna see more</span>
+    </button>
+  </mat-card-actions>
+</mat-card>

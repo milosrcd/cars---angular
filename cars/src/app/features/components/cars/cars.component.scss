@@ -1,0 +1,26 @@
+@import "../../../../styles/variables";
+
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  border: transparent;
+  border-radius: 4px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+pagination-controls {
+  display: flex;
+  justify-content: right;
+  margin-top: 20px;
+  margin-right: 32px;
+}
+
+pagination-controls ::ng-deep .ngx-pagination .current {
+  background: $active-color;
+  border-radius: 4px;
+}
+.mat-form-field {
+  margin-left: 50px;
+}

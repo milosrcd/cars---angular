@@ -1,0 +1,28 @@
+<ng-container *ngIf="carOverview; else carNotFound">
+  <div class="caroverview" appCarBackground [price]="carOverview.price">
+    <div class="image-container">
+      <img [alt]="carOverview.name" [src]="carOverview.image" />
+    </div>
+    <div class="content-container">
+      <button class="closebtn" routerLink="">X</button>
+      <div>
+        <p>{{ carOverview | fullModelName | titlecase }}</p>
+        <p>
+          Price: {{ carOverview.price | currency : 'EUR' : 'symbol' : '1.0-0' }}
+        </p>
+        <p>Date: {{ carOverview.createdAt | date : "dd.MM.YYYY" }}</p>
+        <p>Car ID:{{ carOverview.id }}</p>
+        <p>{{ carOverview.description }}</p>
+        <button mat-button (click)="openVideo(carOverview.videoUrl)">
+          <span><mat-icon>video_library</mat-icon>If you wanna see more</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<div></div>
+
+<ng-template #carNotFound>
+  <app-headline text="Car Overview"></app-headline>
+</ng-template>

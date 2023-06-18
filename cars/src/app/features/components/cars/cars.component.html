@@ -1,0 +1,20 @@
+<mat-form-field>
+  <mat-label>Search by engine</mat-label>
+  <input
+    matInput
+    [(ngModel)]="term"
+    (ngModelChange)="searchTerms$.next($event)"
+  />
+</mat-form-field>
+<div>
+  <div>
+    <section class="cars">
+      <ng-container *ngFor=" let car of cars | paginate : { itemsPerPage: pageSize, currentPage: p }">
+        <app-car [car]="car"></app-car>
+      </ng-container>
+    </section>
+    <ng-container class="paginator">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </ng-container>
+  </div>
+</div>

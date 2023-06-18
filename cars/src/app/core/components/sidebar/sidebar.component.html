@@ -1,0 +1,60 @@
+<div class="sidebar" data-color="white" data-active-color="active">
+  <div class="logo">
+    <a class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img
+          class="img-logo"
+          src="../../../../assets/img/car-silhouette-logo.png"
+        />
+      </div>
+    </a>
+    <a class="simple-text logo-normal"> CARS </a>
+  </div>
+
+  <div class="sidebar-wrapper">
+    <ul class="nav" *ngFor="let link of navigationLinks">
+      <ng-container [ngSwitch]="link.name">
+        <li
+          *ngSwitchCase="'home'"
+          routerLinkActive="active"
+          [routerLink]="[link.path]"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a><mat-icon>home</mat-icon> {{ link.name }}</a>
+        </li>
+        <ng-container *ngIf="isAdmin">
+          <li
+            *ngSwitchCase="'admin'"
+            routerLinkActive="active"
+            [routerLink]="link.path"
+          >
+            <a><mat-icon> local_library</mat-icon> {{ link.name }}</a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+          <li
+            *ngSwitchCase="'login'"
+            routerLinkActive="active"
+            [routerLink]="link.path"
+          >
+            <a><mat-icon>person</mat-icon>{{ link.name }}</a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+          <li
+            *ngSwitchCase="'register'"
+            routerLinkActive="active"
+            [routerLink]="link.path"
+          >
+            <a><mat-icon>person</mat-icon>{{ link.name }}</a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="!isLoggedIn">
+          <li *ngSwitchCase="'logout'">
+            <a (click)="logOut()"><mat-icon>person</mat-icon>LOGOUT</a>
+          </li>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </div>
+</div>

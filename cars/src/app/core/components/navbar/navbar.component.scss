@@ -1,0 +1,33 @@
+@import "../../../../styles/variables";
+
+.navbar-absolute {
+  position: absolute;
+  width: 100%;
+  padding-top: 26px;
+  z-index: 1029;
+}
+
+.navbar-transparent {
+  border-bottom: 1px solid $white-color;
+  z-index: 0;
+}
+.navbar-wrapper {
+  display: flex;
+  justify-content: right;
+  margin-right: 4%;
+  padding-bottom: 12px;
+  .mat-icon {
+    font-size: 36px;
+    vertical-align: text-bottom;
+    color: $default-color;
+  }
+  a {
+    font-size: 14px;
+    font-weight: 550;
+    color: $default-color;
+  }
+}
+
+::ng-deep .mat-menu-item {
+  font-weight: 550;
+}

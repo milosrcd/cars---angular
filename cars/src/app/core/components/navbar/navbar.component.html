@@ -1,0 +1,22 @@
+<nav  class="navbar navbar-absolute  navbar-transparent">
+  <div class="container-fluid">
+    <div class="navbar-wrapper">
+      <div>
+        <ng-container class="logBtn">
+          <a>Welcome {{ userName }} </a>
+          <button mat-button [matMenuTriggerFor]="beforeMenu">
+            <mat-icon>account_box</mat-icon>
+          </button>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <ng-container *ngIf="!isLoggedIn">
+              <button mat-menu-item (click)="logOut()">Logout</button>
+            </ng-container>
+            <ng-container *ngIf="isLoggedIn">
+              <button mat-menu-item (click)="logOut()">Login</button>
+            </ng-container>
+          </mat-menu>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</nav>

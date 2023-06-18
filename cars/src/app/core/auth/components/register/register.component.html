@@ -1,0 +1,150 @@
+<div class="register">
+  <mat-card class="example-form">
+    <div>
+      <img src="../../../../../assets/img/car-silhouette-logo.png" />
+      <br />
+      <a
+        >“It’s what non-car people don’t get. They see all cars as just a ton
+        and a half, two tons of wires, glass, metal, and rubber, and that’s all
+        they see. People like you or I know we have an unshakable belief that
+        cars are living entities… You can develop a relationship with a car and
+        that’s what non-car people don’t get… When something has foibles and
+        won’t handle properly, that gives it a particularly human quality
+        because it makes mistakes, and that’s how you can build a relationship
+        with a car that other people won’t get.”
+        <br />
+        <strong>Jeremy Clarkson</strong></a
+      >
+    </div>
+    <form
+      class="example-form"
+      [formGroup]="profileForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input
+            type="text"
+            [formGroup]="profileForm"
+            formControlName="fullName"
+            matInput
+            placeholder="Ex. Pera Peric"
+          />
+          <span *ngIf="profileForm.controls.fullName | hasError : 'required'"
+            >Name is required</span
+          >
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            [formGroup]="profileForm"
+            formControlName="email"
+            placeholder="Ex. pera@peric.com"
+          />
+          <mat-error>{{ getErrorMessage() }}</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            [formGroup]="profileForm"
+            placeholder="password"
+            formControlName="password"
+          />
+          <span *ngIf="profileForm.controls.password | hasError : 'required'"
+            >password is Required</span
+          >
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input
+            type="password"
+            matInput
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+          />
+        </mat-form-field>
+      </p>
+      <button mat-raised-button [disabled]="profileForm.invalid" type="submit">
+        Register
+      </button>
+    </form>
+  </mat-card>
+
+  <!-- <mat-card class="example-form">
+    <form
+      [formGroup]="profileForm"
+      (ngSubmit)="onSubmit()"
+      class="example-full-width"
+    >
+      <input
+        placeholder="Name"
+        type="text"
+        formControlName="fullName"
+        [ngClass]="{
+          'border-danger': profileForm.controls.fullName | checkValidity
+        }"
+      />
+      <span *ngIf="profileForm.controls.fullName | hasError : 'required'"
+        >First Name is Required</span
+      >
+      <span *ngIf="profileForm.controls.fullName | hasError : 'pattern'"
+        >First Name is not in valid form</span
+      >
+      <br />
+      <input
+        placeholder="Email"
+        type="email"
+        formControlName="email"
+        [ngClass]="{
+          'border-danger': profileForm.controls.email | checkValidity
+        }"
+      />
+      <span *ngIf="profileForm.controls.email | hasError : 'required'"
+        >email is Required</span
+      >
+      <span *ngIf="profileForm.controls.email | hasError : 'required'"
+        >Invalid email form</span
+      >
+      <br />
+      <input
+        placeholder="Password"
+        type="password"
+        formControlName="password"
+        [ngClass]="{
+          'border-danger': profileForm.controls.password | checkValidity
+        }"
+      />
+      <span *ngIf="profileForm.controls.password | hasError : 'required'"
+        >password is Required</span
+      >
+      <br />
+      <input
+        placeholder="Confirm Password"
+        type="password"
+        formControlName="confirmPassword"
+        [ngClass]="{
+          'border-danger': profileForm.controls.confirmPassword | checkValidity
+        }"
+      />
+      <br />
+      <span *ngIf="profileForm.controls.confirmPassword | hasError : 'required'"
+        >password is Required</span
+      >
+
+      <br />
+      <hr />
+      <button [disabled]="profileForm.invalid" type="submit">Register</button>
+    </form>
+  </mat-card> -->
+</div>

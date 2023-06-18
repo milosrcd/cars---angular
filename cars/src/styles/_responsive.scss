@@ -1,0 +1,43 @@
+@media screen and (max-width: 991px) {
+  .sidebar {
+    position: fixed;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 220px;
+    right: auto;
+    left: 0;
+    z-index: 1032;
+    visibility: visible;
+    overflow-y: visible;
+    padding: 0;
+    @include transition(0.5s);
+    @include transform-translate-x(-220px);
+  }
+
+  .main-panel {
+    width: 100%;
+  }
+}
+
+.sidebar {
+  .sidebar-wrapper {
+    li.active {
+      > a:not([data-toggle="collapse"]),
+      > [data-toggle="collapse"] + div .nav li {
+        &:after {
+          border-right: 17px solid $default-body-bg;
+          border-top: 17px solid transparent;
+          border-bottom: 17px solid transparent;
+          content: "";
+          display: inline-block;
+          position: absolute;
+          right: -17px;
+          opacity: 1;
+          top: 7px;
+          transition: opacity 150ms ease-in;
+        }
+      }
+    }
+  }
+}
