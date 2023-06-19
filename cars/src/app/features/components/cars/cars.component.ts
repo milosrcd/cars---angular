@@ -20,7 +20,6 @@ export class CarsComponent implements OnInit, OnDestroy {
   constructor(private carService: CarsService) { }
 
   ngOnInit(): void {
-    console.log(window.innerWidth);
     this.searchTerms$
       .pipe(debounceTime(2500),
         takeUntil(this.unsubscribe$))

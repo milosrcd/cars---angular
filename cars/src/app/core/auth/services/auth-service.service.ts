@@ -10,7 +10,6 @@ import { User } from '../interfaces/register-form.interface';
   providedIn: 'root'
 })
 export class AuthService {
-  // message: Subject<string> = new Subject<string>();
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 

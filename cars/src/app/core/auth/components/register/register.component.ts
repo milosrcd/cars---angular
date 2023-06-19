@@ -52,7 +52,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     const formData = this.profileForm.value as RegisterForm;
-    console.log(this.profileForm);
     const user: User = {
       fullName: formData.fullName || '',
       email: formData.email || '',
@@ -62,7 +61,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(user)
       .pipe(take(1))
       .subscribe(() => {
-        this.notificationService.displayNotification('You are registered successfully!');
+        this.notificationService.displayNotification('You registered successfully!');
         this.router.navigateByUrl('/login');
       });
   }

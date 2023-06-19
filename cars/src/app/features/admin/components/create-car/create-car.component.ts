@@ -127,7 +127,7 @@ export class CreateCarComponent implements OnInit, OnDestroy {
         .pipe(take(1))
         .subscribe(() => {
           this.router.navigateByUrl('admin');
-          this.notificationService.displayNotification('Car created successfully!');
+          this.notificationService.displayNotification('Car added successfully!');
           this.close();
         });
     }
