@@ -44,7 +44,6 @@ export class CreateCarComponent implements OnInit, OnDestroy {
     private notificationService: NotificationService,
     private _snackBar: MatSnackBar
   ) {
-    console.log('dialog', data);
     this.notificationSubscription = this.notificationService.notification$.subscribe(
       (message: string) => {
         this.notification = message;

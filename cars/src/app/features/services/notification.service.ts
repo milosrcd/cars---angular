@@ -12,6 +12,5 @@ export class NotificationService {
 
   displayNotification(message: string) {
     this.notificationSubject.next(message);
-    console.log(message);
   }
 }

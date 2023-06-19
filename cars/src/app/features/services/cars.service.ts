@@ -14,7 +14,6 @@ export class CarsService {
   getAllCars(): Observable<CarDetails[]> {
     return this.httpClient.get<CarDetails[]>(`${environment.baseApiUrl}cars`).pipe(
       catchError((error: any) => {
-        console.log('Error:', error);
         return throwError(
           () => new Error('Ooops! Something went wrong')
         )
@@ -26,7 +25,6 @@ export class CarsService {
     return this.httpClient.get<CarDetails[]>(`${environment.baseApiUrl}cars?engine_like=${engine}`)
       .pipe(
         catchError((error: any) => {
-          console.log('Error:', error);
           return throwError(() => new Error('Ooops! Something went wrong'));
         })
       );
